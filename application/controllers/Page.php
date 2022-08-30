@@ -42,8 +42,15 @@ class Page extends CI_Controller {
 		$data['meta'] = [
 			'title' => 'Contact Us',
 		];
+		$this->load->library('form_validation');
 		if ($this->input->method() === 'post') {
 			$this->load->model('feedback_model');
+			$rules = $this->feedback_model->rules();
+			$this->form_validation->set_rules($rules);
+
+			if ($this->form_validation->run() == FALSE) {
+			return $this->load->view('contact', $data);
+    		}
 		
 			// @TODO: lakukan validasi di sini sebelum insert ke model
 		
