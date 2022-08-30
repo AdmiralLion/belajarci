@@ -10,8 +10,9 @@ $this->load->view('_partials/head.php');
 <body>
 <?php $this->load->view('_partials/navbar.php'); ?>
 
-
-	<h1>Contact Us</h1>
+	<div class="container">
+		<div class="col-sm-9">
+		<h1>Contact Us</h1>
 	<p>Hubungi kami melalui form berikut</p>
 	<form action="" method="post">
 		<div>
@@ -32,6 +33,10 @@ $this->load->view('_partials/head.php');
 			<input type="reset" value="Reset">
 		</div>
 	</form>
+		</div>
+	
+	</div>
+	
 
     <?php $this->load->view('_partials/footer.php'); ?>
 </body>

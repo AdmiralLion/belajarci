@@ -532,3 +532,6 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 $config['base_url'] = 'http://localhost/beritacoding/';
+
+$route['admin'] = 'admin/dashboard';
+
