@@ -138,3 +138,4 @@ $autoload['helper'] = array('url');
 
 $autoload['libraries'] = array('database', 'session');
 
+$autoload['helper'] = array('url', 'gravatar');
