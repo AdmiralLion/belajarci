@@ -3,9 +3,10 @@
 class Article_model extends CI_Model
 {
 	private $_table = 'article';
-	public function get(){
-			$query = $this->db->get($this->_table);
-			return $query->result();
+	public function get($limit = null, $offset = null)
+	{
+		$query = $this->db->get($this->_table, $limit, $offset);
+		return $query->result();
 	}
 	public function count(){
 		return $this->db->count_all($this->_table);
@@ -13,9 +14,11 @@ class Article_model extends CI_Model
 	public function get_published($limit = null, $offset = null)
 	{
 		if (!$limit && $offset) {
-			$query = $this->db->get_where($this->_table, ['draft' => 'false']);
+			$query = $this->db
+				->get_where($this->_table, ['draft' => 'FALSE']);
 		} else {
-			$query =  $this->db->get_where($this->_table, ['draft' => 'false'], $limit, $offset);
+			$query =  $this->db
+				->get_where($this->_table, ['draft' => 'FALSE'], $limit, $offset);
 		}
 		return $query->result();
 	}
@@ -90,4 +93,9 @@ class Article_model extends CI_Model
 		$query = $this->db->get($this->_table);
 		return $query->result();
 }
+	public function get_published_count()
+	{
+		$query = $this->db->get_where($this->_table, ['draft' => 'FALSE']);
+		return $query->num_rows();
+	}
 }
