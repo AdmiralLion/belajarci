@@ -16,7 +16,9 @@ class Article extends CI_Controller
     $config['base_url'] = site_url('/article');
     $config['page_query_string'] = TRUE;
     $config['total_rows'] = $this->article_model->get_published_count();
-    $config['per_page'] = 10;
+    $config['per_page'] = 2;
+    $config['full_tag_open'] = '<div class="pagination">';
+    $config['full_tag_close'] = '</div>';
 
     $this->pagination->initialize($config);
     $limit = $config['per_page'];

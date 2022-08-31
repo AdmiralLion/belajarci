@@ -21,7 +21,9 @@ class Post extends CI_Controller
 	  	$config['base_url'] = site_url('/admin/post');
 		$config['page_query_string'] = TRUE;
 		$config['total_rows'] = $this->article_model->count();
-		$config['per_page'] = 10; // <-kamu bisa ubah ini
+		$config['per_page'] = 2; // <-kamu bisa ubah ini
+		$config['full_tag_open'] = '<div class="pagination">';
+		$config['full_tag_close'] = '</div>';
 	
 		$this->pagination->initialize($config);
 		$limit = $config['per_page'];

@@ -44,11 +44,11 @@
 						<?php endif ?>
 						<td>
 							<div class="action">
-								<a href="<?= site_url('article/'.$article->slug) ?>" class="button button-small" target="_blank" role="button">Preview</a>
-								<a href="<?= site_url('admin/post/edit/'.$article->id) ?>" class="button button-small" role="button">Edit</a>
+								<a href="<?= site_url('article/'.$article->slug) ?>" class="button button-large" target="_blank" role="button">Preview</a>
+								<a href="<?= site_url('admin/post/edit/'.$article->id) ?>" class="button button-large" role="button">Edit</a>
 								<a href="#" 
 									data-delete-url="<?= site_url('admin/post/delete/'.$article->id) ?>" 
-									class="button button-small button-danger" 
+									class="button button-large button-danger" 
 									role="button"
 									onclick="deleteConfirm(this)">Delete</a>
 							</div>
