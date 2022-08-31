@@ -15,12 +15,20 @@ class Post extends CI_Controller
 	public function index()
 	{
 		$data['current_user'] = $this->auth_model->current_user();
+
 		$data['articles'] = $this->article_model->get();
-        if (count($data['articles'])<=0){
-            $this->load->view('admin/post_empty.php',$data);
-        }else{
-            $this->load->view('admin/post_list.php', $data);
-        }
+			
+		$data['keyword'] = $this->input->get('keyword');
+
+		if(!empty($this->input->get('keyword'))){
+			$data['articles'] = $this->article_model->search($data['keyword']);
+		}
+		
+		if(count($data['articles']) <= 0 && !$this->input->get('keyword')){
+			$this->load->view('admin/post_empty.php', $data);
+		} else {
+			$this->load->view('admin/post_list.php', $data);
+		}
 	}
 
 	public function new()

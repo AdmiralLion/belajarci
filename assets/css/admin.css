@@ -195,3 +195,9 @@ input:focus, textarea:focus {
 	font-size: smaller;
 	color: rgb(153, 16, 16);
 }
+.toolbar {
+	display: flex;
+	margin: 1rem 0;
+	justify-content: space-between;
+	align-items: center;
+}
