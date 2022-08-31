@@ -11,9 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 	<?php $this->load->view('_partials/navbar.php'); ?>
 	<div class="container">
-		<div class="row">
 		<h1>Home Page</h1>
-		</div>
 	</div>
 
 	<?php $this->load->view('_partials/footer.php'); ?>
